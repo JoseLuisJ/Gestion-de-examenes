@@ -1,0 +1,65 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
+      xmlns:pi="http://xmlns.jcp.org/jsf/passthrough"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Facelet Title</title>
+        <h:outputStylesheet name="css/jsfcrud.css"/>
+        <link rel="stylesheet" href="resources/css/bootstrap.min.css"></link>
+    </h:head>
+    <h:body>
+        <div class="container">
+            <div class="row">
+                <!-- form: -->
+
+                <div class="col-lg-8 col-lg-offset-2">
+                    <div class="page-header">
+                        <h2 >Mensaje</h2>
+                    </div>  
+                    <div class="container">     
+                    </div>
+                    <h:form id="formLogin" pi:method="post" class="form-horizontal"  >
+                        
+                        <div class="form-group">
+                            <h:outputLabel class="col-lg-3 control-label">Destinatario:</h:outputLabel>
+                                <div class="col-lg-4">
+                                    <h:inputText  class="form-control" id="destinatario" pi:placeholder="Ingrese el destinatario" style="border-radius:5px;" value="#{emailController.email.emailDestinatario}"/>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <h:outputLabel class="col-lg-3 control-label">Asunto:</h:outputLabel>
+                                <div class="col-lg-4">
+                                    <h:inputText  class="form-control" id="asunto" pi:placeholder="Ingrese el asunto" style="border-radius:5px;" value="#{emailController.asunto}"/>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <h:outputLabel class="col-lg-3 control-label">Mensaje:</h:outputLabel>
+                                <div class="col-lg-4">
+                                    <h:inputTextarea  class="form-control" id="contenitdo" pi:placeholder="Ingrese el mensaje" style="border-radius:5px;" value="#{emailController.contenido}"/>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-lg-9 col-lg-offset-3">
+                                <h:commandButton type="submit" class="btn btn-primary" style="background-color: #50B2A8;" value="Enviar" action="#{emailController.enviarMensaje()}" ></h:commandButton>
+                                </div>
+                            </div>  
+
+                    </h:form>
+
+                </div>       
+
+            </div>
+
+        </div>
+    </h:body>
+
+
+
+</html>
+
